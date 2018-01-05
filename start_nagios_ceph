@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$(ls -A /opt/nagios/etc/conf.d/ceph.cfg 2> /dev/null)" ]; then
+    echo "Add ceph plugin to nagios"
+    cp -Rp /opt/ceph-nagios-plugin/cfg/ceph.cfg /opt/nagios/etc/conf.d/ceph.cfg
+fi
+
+# Now start Jason Rivers command
+/usr/local/bin/start_nagios
