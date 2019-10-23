@@ -1,4 +1,4 @@
-FROM jasonrivers/nagios:latest
+FROM jasonrivers/nagios:4.4.4
 
 LABEL maintainer=coen.vanleeuwen@tno.nl
 
