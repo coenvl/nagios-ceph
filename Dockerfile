@@ -1,10 +1,10 @@
-FROM jasonrivers/nagios:4.4.4
+FROM jasonrivers/nagios:4.4.6
 
 LABEL maintainer=coen.vanleeuwen@tno.nl
 
 ENV CEPH_PLUGIN /opt/ceph-nagios-plugin
 
-RUN apt-get update && apt-get install -y ceph && \
+RUN apt-get update && apt-get install -y ceph freeipmi-tools && \
 	apt-get clean && rm -Rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/ceph/ceph-nagios-plugins.git && \
